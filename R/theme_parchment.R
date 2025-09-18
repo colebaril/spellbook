@@ -6,8 +6,7 @@
 #' @return A themed ggplot object
 #' @export
 
-theme_parchment <- function(p) {
-  p +
+theme_parchment <- function() {
     theme_bw(base_size = 12,
                  base_family = "Courier New",
                  paper = "cornsilk", ink = "black") +
