@@ -7,11 +7,7 @@
 #' @import ggplot2
 #' @import extrafont
 
-# optionally load fonts if user has extrafont installed (non-blocking)
-if (requireNamespace("extrafont", quietly = TRUE)) {
-  # avoid forcing heavy imports at package load time; try but don't fail
-  try(extrafont::loadfonts(device = "win", quiet = TRUE), silent = TRUE)
-}
+extrafont::loadfonts(device = "win")
 
 theme_parchment <- function() {
     theme_bw(base_size = 12,
