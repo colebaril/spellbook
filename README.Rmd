@@ -22,15 +22,15 @@ knitr::opts_chunk$set(
 
 The spellbook package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now summon my favorite utilities directly from this grimoire.
 
-Features
+## Features
 
-Handy utility functions for everyday analysis 🧹
+- Handy utility functions for everyday analysis 🧹
 
-Custom ggplot2 themes (e.g. theme_parchment) styled with personality 📜
+- Custom ggplot2 themes (e.g. theme_parchment) styled with personality 📜
 
-Color palettes and styling tools for consistent plots 🎨
+- Color palettes and styling tools for consistent plots 🎨
 
-Easy to expand as new “spells” are discovered ✍️
+- Easy to expand as new “spells” are discovered ✍️
 
 ## Installation
 
