@@ -2,9 +2,10 @@
 #'
 #' A ggplot2 theme styled like old parchment and ink.
 #'
-#' @param p A ggplot object
 #' @return A themed ggplot object
 #' @export
+#' @import ggplot2
+#' @import extrafont
 
 theme_parchment <- function() {
     theme_bw(base_size = 12,
