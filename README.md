@@ -43,6 +43,7 @@ library(spellbook)
 library(tidyverse)
 library(palmerpenguins)
 
+
 penguins |> 
   ggplot(aes(x = sex, group = factor(year))) +
   geom_bar(aes(fill = factor(year))) +
