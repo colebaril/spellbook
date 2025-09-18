@@ -48,13 +48,15 @@ This is a basic example which shows you how to solve a common problem:
 library(spellbook)
 library(tidyverse)
 library(palmerpenguins)
+library(extrafont)
 
 
 penguins |> 
   ggplot(aes(x = sex, group = factor(year))) +
   geom_bar(aes(fill = factor(year))) +
   scale_fill_viridis_d("Year") +
-  theme_parchment()
+  theme_parchment() +
+  labs(title = "Counts of Sex by Year", y = "Count", x = "Sex")
 
 
 
