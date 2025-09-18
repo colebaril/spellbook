@@ -36,8 +36,6 @@ devtools::install_github("colebaril/spellbook")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
-
 ``` r
 library(spellbook)
 library(tidyverse)
@@ -52,3 +50,5 @@ penguins |>
   theme_parchment() +
   labs(title = "Counts of Sex by Year", y = "Count", x = "Sex")
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
