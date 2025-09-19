@@ -2,6 +2,8 @@
 
 export(cast_safe_df)
 export(conjure_commas)
+export(purify_data)
 export(theme_parchment)
 import(extrafont)
 import(ggplot2)
+import(janitor)
