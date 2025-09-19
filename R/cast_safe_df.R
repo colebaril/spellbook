@@ -1,6 +1,6 @@
-#' Cast Safe Df
-#' Safely run a function and return a consistent data frame
+#' cast_safe_df()
 #'
+#' Safely run a function and return a consistent data frame
 #' Executes any function while handling errors and empty outputs gracefully.
 #' Returns a tibble with the original results, plus `context` and `error` columns.
 #'
@@ -39,12 +39,12 @@
 #' print(out)
 #'
 #' # Example 2: reading multiple files safely
-#' # df <- map_df(list.files(pattern = ".csv", full.names = TRUE),
-#' #              ~ safe_run_df(readr::read_csv, .x,
-#' #                            col_names = FALSE,
-#' #                            show_col_types = FALSE,
-#' #                            context = basename(.x),
-#' #                            placeholder = tibble(X1 = NA_character_)))
+#' df <- map_df(list.files(pattern = ".csv", full.names = TRUE),
+#'              ~ safe_run_df(readr::read_csv, .x,
+#'                            col_names = FALSE,
+#'                            show_col_types = FALSE,
+#'                            context = basename(.x),
+#'                            placeholder = tibble(X1 = NA_character_)))
 #'
 #' @export
 

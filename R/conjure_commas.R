@@ -1,4 +1,4 @@
-#' Conjure Commas
+#' conjure_commas()
 #'
 #' Adds commas to large numbers for easier readability.
 #'

@@ -2,7 +2,7 @@
 % Please edit documentation in R/conjure_commas.R
 \name{conjure_commas}
 \alias{conjure_commas}
-\title{Conjure Commas}
+\title{conjure_commas()}
 \usage{
 conjure_commas(x)
 }

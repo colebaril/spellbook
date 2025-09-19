@@ -2,8 +2,7 @@
 % Please edit documentation in R/cast_safe_df.R
 \name{cast_safe_df}
 \alias{cast_safe_df}
-\title{Cast Safe Df
-Safely run a function and return a consistent data frame}
+\title{cast_safe_df()}
 \usage{
 cast_safe_df(
   fun,
@@ -30,6 +29,7 @@ A tibble containing:
 }
 }
 \description{
+Safely run a function and return a consistent data frame
 Executes any function while handling errors and empty outputs gracefully.
 Returns a tibble with the original results, plus \code{context} and \code{error} columns.
 }
@@ -56,11 +56,11 @@ out <- map_df(nums, ~ safe_run_df(
 print(out)
 
 # Example 2: reading multiple files safely
-# df <- map_df(list.files(pattern = ".csv", full.names = TRUE),
-#              ~ safe_run_df(readr::read_csv, .x,
-#                            col_names = FALSE,
-#                            show_col_types = FALSE,
-#                            context = basename(.x),
-#                            placeholder = tibble(X1 = NA_character_)))
+df <- map_df(list.files(pattern = ".csv", full.names = TRUE),
+             ~ safe_run_df(readr::read_csv, .x,
+                           col_names = FALSE,
+                           show_col_types = FALSE,
+                           context = basename(.x),
+                           placeholder = tibble(X1 = NA_character_)))
 
 }
