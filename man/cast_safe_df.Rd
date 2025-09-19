@@ -48,7 +48,7 @@ f <- function(x) {
   10 / x
 }
 nums <- -1:1
-out <- map_df(nums, ~ safe_run_df(
+out <- map_df(nums, ~ cast_safe_df(
   f, .x,
   context = paste("value =", .x),
   placeholder = tibble(result = NA_real_)
@@ -57,7 +57,7 @@ print(out)
 
 # Example 2: reading multiple files safely
 df <- map_df(list.files(pattern = ".csv", full.names = TRUE),
-             ~ safe_run_df(readr::read_csv, .x,
+             ~ cast_safe_df(readr::read_csv, .x,
                            col_names = FALSE,
                            show_col_types = FALSE,
                            context = basename(.x),
