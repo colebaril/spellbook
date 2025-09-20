@@ -42,7 +42,7 @@ devtools::install_github("colebaril/spellbook")
 
 ## Example
 
-```{r example, message = FALSE, warning = FALSE}
+```{r example, message = FALSE, warning = FALSE, fig.dpi = 300}
 library(spellbook)
 library(tidyverse)
 library(palmerpenguins)
