@@ -43,10 +43,11 @@ library(palmerpenguins)
 library(extrafont)
 
 
-ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species)) +
-  geom_density_2d_filled(xlim = c(160, 240), ylim = c(30, 70)) +
+ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
+  geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
   scale_fill_viridis_d("Species") +
+  scale_colour_viridis_d("Species") +
   theme_parchment() 
 ```
 
