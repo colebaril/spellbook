@@ -36,6 +36,10 @@ devtools::install_github("colebaril/spellbook")
 
 ## Example
 
+In the following example, `theme_parchment()` is used to alter thematic
+elements of the plot and `scale_spellbook()` is used to apply my custom
+colour palettes.
+
 ``` r
 library(spellbook)
 library(tidyverse)
@@ -46,13 +50,10 @@ library(extrafont)
 ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = species)) +
   geom_point(shape = 21) +
   geom_smooth(aes(colour = species), se = FALSE, method = "lm") +
-  scale_fill_viridis_d("Species") +
-  scale_colour_viridis_d("Species") +
-  theme_parchment() 
+  scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
+  scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
+  theme_parchment() +
+  labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)")
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
-
-``` r
-  # labs(title = "Counts of Sex by Year", y = "Count", x = "Sex")
-```
