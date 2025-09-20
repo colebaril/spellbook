@@ -43,12 +43,15 @@ library(palmerpenguins)
 library(extrafont)
 
 
-penguins |> 
-  ggplot(aes(x = sex, group = factor(year))) +
-  geom_bar(aes(fill = factor(year))) +
-  scale_fill_viridis_d("Year") +
-  theme_parchment() +
-  labs(title = "Counts of Sex by Year", y = "Count", x = "Sex")
+ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species)) +
+  geom_density_2d_filled(xlim = c(160, 240), ylim = c(30, 70)) +
+  geom_point(shape = 21) +
+  scale_fill_viridis_d("Species") +
+  theme_parchment() 
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+``` r
+  # labs(title = "Counts of Sex by Year", y = "Count", x = "Sex")
+```
