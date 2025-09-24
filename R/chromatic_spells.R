@@ -25,10 +25,11 @@ palettes <- list(
                   "#C075A6", "#782AB6", "#AAF400", "#BDCDFF", "#822E1C", "#B5EFB5", 
                   "#7ED7D1", "#1C7F93", "#D85FF7", "#683B79", "#66B0FF", "#3B00FB"),
   spotify_pal = c("#0b3e34", "#1db954"),
-  halloween = c("#000000", "#2E0854", "#4B0082", "#8B008B", "#FF4500", "#FF7518", "#39FF14", "#ADFF2F"),
-  haunted_forest = c("#0B3D02", "#013220", "#000000", "#4B5320", "#6B8E23", "#9AA0A6", "#C0C5C1", "#F6E27F"),
-  ghostly_glow = c("#E8EDEE", "#F5F5F5", "#FFFFFF", "#CDECF6", "#A4DDED", "#BFA6E2", "#D8BFD8", "#E6E6FA"),
-  blood_moon = c("#8B0000", "#A52A2A", "#B22222", "#000000", "#2C003E", "#3D0075", "#6A0DAD", "#C0C0C0")
+  halloween = c("#000000","#4B0082","#8B008B","#FF4500","#FF8C00","#FFD700","#39FF14","#ADFF2F"),  
+  haunted_forest = c("#013220","#0B6623","#228B22","#556B2F","#808080","#A9A9A9","#D3D3D3","#F6E27F"),  
+  ghostly_glow = c("#FFFFFF","#F5F5F5","#C0C0C0","#ADD8E6","#5F9EA0","#9370DB","#D8BFD8","#E6E6FA"),  
+  blood_moon = c("#8B0000","#B22222","#FF0000","#000000","#2C003E","#4B0082","#800080","#C0C0C0"),  
+  
 )
 
 
