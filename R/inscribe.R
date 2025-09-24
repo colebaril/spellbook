@@ -19,7 +19,9 @@ inscribe <- function(type = c("plot", "table"),
   type <- match.arg(type)
   
 
-
+  sysfonts::font_add( family = "Font Awesome 7 Brands", 
+                      regular = "D:/Projects/fa/fontawesome-free-7.0.1-desktop/otfs/Font Awesome 7 Brands-Regular-400.otf") 
+  showtext::showtext_auto()
   
   github_icon <- "\uf09b"  
   bluesky_icon <- "\ue671"
