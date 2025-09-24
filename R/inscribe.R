@@ -26,7 +26,7 @@ inscribe <- function(type = c("plot", "table"),
   github_icon <- "\uf09b"  
   bluesky_icon <- "\ue671"
   social_caption <- glue::glue(
-    "<span style='font-weight:bold;'>Graphic:</span>
+    "<span style='font-weight:bold; color:#4d4d4d; '>Graphic:</span>
   <span style='font-family:\"Font Awesome 7 Brands\"; color:#4d4d4d;'>{github_icon}</span>
    <span style='color:#4d4d4d;'>{github_username}</span>
    <span style='margin-left:15px;'></span>
