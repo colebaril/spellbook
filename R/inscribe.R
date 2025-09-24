@@ -26,7 +26,8 @@ inscribe <- function(type = c("plot", "table"),
   github_icon <- "\uf09b"  
   bluesky_icon <- "\ue671"
   social_caption <- glue::glue(
-    "<span style='font-family:\"Font Awesome 7 Brands\"; color:#4d4d4d;'>{github_icon}</span>
+    "<span style='font-weight:bold;'>Graphic:</span>
+  <span style='font-family:\"Font Awesome 7 Brands\"; color:#4d4d4d;'>{github_icon}</span>
    <span style='color:#4d4d4d;'>{github_username}</span>
    <span style='margin-left:15px;'></span>
    <span style='font-family:\"Font Awesome 7 Brands\"; color:#4d4d4d;'>{bluesky_icon}</span>
@@ -36,9 +37,10 @@ inscribe <- function(type = c("plot", "table"),
   if (type == "plot") {
     return(list(
       labs(caption = social_caption),
-      theme(plot.caption = ggtext::element_textbox_simple(size = 12))
+      theme(plot.caption = ggtext::element_textbox_simple(size = 12, face = "bold"))
     ))
   } else if (type == "table") {
     return(function(x) gt::tab_source_note(x, gt::md(social_caption)))
   }
 }
+
