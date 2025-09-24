@@ -22,16 +22,6 @@ knitr::opts_chunk$set(
 
 The spellbook package is a personal library of functions, ggplot2 themes, and palettes that I reach for often in data analysis and visualization. Instead of re-writing code across projects, I can now summon my favorite utilities directly from this grimoire.
 
-## Features
-
-- Handy utility functions for everyday analysis 🧹
-
-- Custom ggplot2 themes (e.g. theme_parchment) styled with personality 📜
-
-- Color palettes and styling tools for consistent plots 🎨
-
-- Easy to expand as new “spells” are discovered ✍️
-
 ## Installation
 
 You can install the development version of spellbook from [GitHub](https://github.com/) with:
@@ -42,10 +32,11 @@ devtools::install_github("colebaril/spellbook")
 
 ## Example
 
+### Themes and Palettes
 In the following example, `theme_parchment()` is used to alter thematic elements 
 of the plot and `scale_spellbook()` is used to apply my custom colour palettes.
 
-```{r example, message = FALSE, warning = FALSE, fig.dpi = 300}
+```{r, example_theme_palette, message = FALSE, warning = FALSE, fig.dpi = 300}
 library(spellbook)
 library(tidyverse)
 library(palmerpenguins)
@@ -59,9 +50,27 @@ ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = 
   scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
   theme_parchment() +
   labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)")
-
-
-
 ```
 
+### Data Cleaning
+
+In this example, `purify_data()` is used to standardize column names, trim white 
+space, convert empty columns to true `NA`s, and flags outliers for any numeric
+columns using robust means.
+
+```{r, example_cleaning}
+df <- tibble::tibble(
+  "First Name" = c(" Alice ", "Bob", "", "CHARLIE", "dave", "Eve", NA, "Bob", "Bob"),
+  "Last Name" = c("Smith", "Jones", "O'Neil", "Brown", "Miller", "O'Brien", "", "Jones", "Jones"),
+  "Score" = c(10, 5000, 15, 20, 12, -999, 14, 5000, 5000),  
+  "Enrollment Date" = c("2025-01-01", "20241215", "2025/02/01", "", NA, "01-03-2025", "2025-01-01", "2024-12-15", "2024-12-15"),
+  "Grade" = c("A", "b", "C", "A", "B", "", "A", "b", "b"),
+  "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", "Average", " Excellent ", " Excellent "),
+  "EmptyCol" = c(NA, NA, NA, NA, NA, NA, NA, NA, NA)
+)
+
+print(df)
+
+purify_data(df, trim_chars = TRUE, empty_to_na = TRUE, flag_outliers = TRUE)
+```
 

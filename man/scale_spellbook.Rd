@@ -30,6 +30,8 @@ A ggplot2 scale object.
 Apply a spellbook palette to a ggplot colour or fill scale.
 }
 \examples{
+library(ggplot2)
+library(spellbook)
 ggplot(mpg, aes(class, fill = class)) +
   geom_bar() +
   scale_spellbook(palette = "eldritch_night", type = "d", aesthetics = "fill")

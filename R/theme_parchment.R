@@ -21,7 +21,6 @@
 
 theme_parchment <- function() {
     theme_bw(base_size = 12,
-                 base_family = "Courier New",
                  paper = "cornsilk", ink = "black") +
     theme(
       plot.title = element_text(face = "bold", size = 25, hjust = 0.5),

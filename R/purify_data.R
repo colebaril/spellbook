@@ -22,13 +22,13 @@
 #' @import janitor
 #' @examples
 #' df <- tibble::tibble(
-#'   "First Name" = c(" Alice ", "Bob", "", "CHARLIE", "dave", "Eve", NA, "Bob"),
-#'   "Last Name" = c("Smith", "Jones", "O'Neil", "Brown", "Miller", "O'Brien", "", "Jones"),
-#'   "Score" = c(10, 5000, 15, 20, 12, -999, 14, 5000),  # includes outlier
-#'   "Enrollment Date" = c("2025-01-01", "20241215", "2025/02/01", "", NA, "01-03-2025", "2025-01-01", "2024-12-15"),
-#'   "Grade" = c("A", "b", "C", "A", "B", "", "A", "b"),
-#'   "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", "Average", " Excellent "),
-#'   "EmptyCol" = c(NA, NA, NA, NA, NA, NA, NA, NA)
+#'   "First Name" = c(" Alice ", "Bob", "", "CHARLIE", "dave", "Eve", NA, "Bob", "Bob"),
+#'   "Last Name" = c("Smith", "Jones", "O'Neil", "Brown", "Miller", "O'Brien", "", "Jones", "Jones"),
+#'   "Score" = c(10, 5000, 15, 20, 12, -999, 14, 5000, 5000),  # includes outlier
+#'   "Enrollment Date" = c("2025-01-01", "20241215", "2025/02/01", "", NA, "01-03-2025", "2025-01-01", "2024-12-15", "2024-12-15"),
+#'   "Grade" = c("A", "b", "C", "A", "B", "", "A", "b", "b"),
+#'   "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", "Average", " Excellent ", " Excellent "),
+#'   "EmptyCol" = c(NA, NA, NA, NA, NA, NA, NA, NA, NA)
 #' )
 #' purify_data(df, trim_chars = TRUE, empty_to_na = TRUE)
 purify_data <- function(df,
