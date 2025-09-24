@@ -34,9 +34,11 @@ devtools::install_github("colebaril/spellbook")
 
 ### Themes and Palettes
 In the following example, `theme_parchment()` is used to alter thematic elements 
-of the plot and `scale_spellbook()` is used to apply my custom colour palettes.
+of the plot and `scale_spellbook()` is used to apply my custom colour palettes. 
+I also use the `inscribe()` function to automatically insert a caption that is
+pre-formatted with icons and social media tags.
 
-```{r, example_theme_palette, message = FALSE, warning = FALSE, fig.dpi = 300}
+```{r, example_theme_palette, message = FALSE, warning = FALSE, fig.width = 10, fig.height = 7}
 library(spellbook)
 library(tidyverse)
 library(palmerpenguins)
@@ -49,7 +51,9 @@ ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = 
   scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
   scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
   theme_parchment() +
-  labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)")
+  labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
+  inscribe(type = "plot") 
+  
 ```
 
 ### Data Cleaning

@@ -14,17 +14,6 @@ themes, and palettes that I reach for often in data analysis and
 visualization. Instead of re-writing code across projects, I can now
 summon my favorite utilities directly from this grimoire.
 
-## Features
-
-- Handy utility functions for everyday analysis 🧹
-
-- Custom ggplot2 themes (e.g. theme_parchment) styled with personality
-  📜
-
-- Color palettes and styling tools for consistent plots 🎨
-
-- Easy to expand as new “spells” are discovered ✍️
-
 ## Installation
 
 You can install the development version of spellbook from
@@ -40,7 +29,8 @@ devtools::install_github("colebaril/spellbook")
 
 In the following example, `theme_parchment()` is used to alter thematic
 elements of the plot and `scale_spellbook()` is used to apply my custom
-colour palettes.
+colour palettes. I also use the `inscribe()` function to automatically
+insert a caption that is pre-formatted with icons and social media tags.
 
 ``` r
 library(spellbook)
@@ -55,7 +45,8 @@ ggplot(penguins, aes(flipper_length_mm, bill_length_mm, fill = species, group = 
   scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "fill") +
   scale_spellbook(name = "Species", palette = "arcane_flame", type = "d", aesthetics = "colour") +
   theme_parchment() +
-  labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)")
+  labs(title = "Palmer Penguin Bill Length \nvs. Flipper Length", x = "Flipper Length (mm)", y = "Bill Length (mm)") +
+  inscribe(type = "plot") 
 ```
 
 <img src="man/figures/README-example_theme_palette-1.png" width="100%" />
@@ -70,7 +61,7 @@ outliers for any numeric columns using robust means.
 df <- tibble::tibble(
   "First Name" = c(" Alice ", "Bob", "", "CHARLIE", "dave", "Eve", NA, "Bob", "Bob"),
   "Last Name" = c("Smith", "Jones", "O'Neil", "Brown", "Miller", "O'Brien", "", "Jones", "Jones"),
-  "Score" = c(10, 5000, 15, 20, 12, -999, 14, 5000, 5000),  # includes outlier
+  "Score" = c(10, 5000, 15, 20, 12, -999, 14, 5000, 5000),  
   "Enrollment Date" = c("2025-01-01", "20241215", "2025/02/01", "", NA, "01-03-2025", "2025-01-01", "2024-12-15", "2024-12-15"),
   "Grade" = c("A", "b", "C", "A", "B", "", "A", "b", "b"),
   "Comments!" = c("Good", " Excellent ", "", "Needs work", NA, "Good!", "Average", " Excellent ", " Excellent "),
