@@ -19,8 +19,8 @@
 #' @import ggplot2
 #' @import extrafont
 
-theme_parchment <- function() {
-    theme_bw(base_size = 12) +
+theme_parchment <- function(remove_grid = FALSE) {
+  th <- theme_bw(base_size = 12) +
     theme(
       plot.title = element_text(face = "bold", size = 25, hjust = 0.5),
       plot.subtitle = element_text(size = 15, hjust = 0.5),
@@ -31,4 +31,15 @@ theme_parchment <- function() {
       legend.title.position = "top",
       legend.text = element_text(size = 12)
     )
+  
+  if (remove_grid) {
+    th <- th + theme(
+      panel.grid.major.x = element_blank(),
+      panel.grid.major.y = element_blank(),
+      panel.grid.minor.x = element_blank(),
+      panel.grid.minor.y = element_blank()
+    )
+  }
+  
+  return(th)
 }
