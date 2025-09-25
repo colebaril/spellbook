@@ -20,8 +20,7 @@
 #' @import extrafont
 
 theme_parchment <- function() {
-    theme_bw(base_size = 12,
-                 paper = "cornsilk", ink = "black") +
+    theme_bw(base_size = 12) +
     theme(
       plot.title = element_text(face = "bold", size = 25, hjust = 0.5),
       plot.subtitle = element_text(size = 15, hjust = 0.5),
