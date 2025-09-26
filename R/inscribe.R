@@ -14,6 +14,8 @@
 #' @import showtext
 #' @import ggtext
 inscribe <- function(type = c("plot", "table"), 
+                     include_data_source = FALSE,
+                     data_source = NULL,
                      github_username = "colebaril",
                      bluesky_username = "@colebaril.ca") {
   type <- match.arg(type)
@@ -34,6 +36,11 @@ inscribe <- function(type = c("plot", "table"),
    <span style='color:#4d4d4d;'>{bluesky_username}</span>"
   )
   
+  if (include_data_source && !is.null(data_source)) {
+    social_caption <- glue::glue("{social_caption}  
+    <br><span style='font-weight:bold; color:#4d4d4d;'>Data:</span> <span style='color:#4d4d4d;'>{data_source}</span>")
+  }
+  
   if (type == "plot") {
     return(list(
       labs(caption = social_caption),
@@ -43,4 +50,3 @@ inscribe <- function(type = c("plot", "table"),
     return(function(x) gt::tab_source_note(x, gt::md(social_caption)))
   }
 }
-
