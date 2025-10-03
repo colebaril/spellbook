@@ -28,19 +28,19 @@ inscribe <- function(type = c("plot", "table"),
   github_icon <- "\uf09b"  
   bluesky_icon <- "\ue671"
   social_caption <- glue::glue(
-    "<span style='font-weight:bold; color:#4d4d4d; '>Graphic:</span>
+    "<span style='font-weight:bold; color:#4d4d4d;'>Graphic:</span>
   <span style='font-family:\"Font Awesome 7 Brands\"; color:#4d4d4d;'>{github_icon}</span>
-   <span style='color:#4d4d4d;'>{github_username}</span>
-   <span style='margin-left:15px;'></span>
-   <span style='font-family:\"Font Awesome 7 Brands\"; color:#4d4d4d;'>{bluesky_icon}</span>
-   <span style='color:#4d4d4d;'>{bluesky_username}</span>"
+  <span style='color:#4d4d4d;'>{github_username}</span>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <span style='font-family:\"Font Awesome 7 Brands\"; color:#4d4d4d;'>{bluesky_icon}</span>
+  <span style='color:#4d4d4d;'>{bluesky_username}</span>"
   )
   
   if (include_data_source && !is.null(data_source)) {
-    social_caption <- glue::glue("{social_caption}  
-    <span style='font-weight:bold; color:#4d4d4d;'>Data:</span> <span style='color:#4d4d4d;'>{data_source}</span>")
+    social_caption <- glue::glue("{social_caption}<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;<span style='font-weight:bold; color:#4d4d4d;'>Data:</span>
+    &nbsp;<span style='color:#4d4d4d;'>{data_source}</span>")
   }
-  
   if (type == "plot") {
     return(list(
       labs(caption = social_caption),
